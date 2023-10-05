@@ -41,7 +41,7 @@ class _homepageState extends State<homepage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
         onPressed: () {
-          Navigator.of(context).pushNamed('details');
+          Navigator.of(context).pushNamed('Build');
         },
         child: Icon(
           Icons.add,

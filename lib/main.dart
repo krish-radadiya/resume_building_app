@@ -11,7 +11,7 @@ void main() {
       ),
       routes: {
         '/': (context) => const homepage(),
-        'details': (context) => const detailspage(),
+        'Build': (context) => const Buildoption(),
       },
     ),
   );
