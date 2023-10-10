@@ -102,7 +102,12 @@ class _BuildOptionState extends State<Buildoption> {
                                   )
                                 ],
                               ),
-                              Icon(Icons.arrow_forward_ios),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pushNamed('contact');
+                                },
+                                child: Icon(Icons.arrow_forward_ios),
+                              ),
                             ],
                           ),
                         ),
