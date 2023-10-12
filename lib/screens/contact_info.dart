@@ -18,74 +18,74 @@ class _contactinfoState extends State<contactinfo> {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 80,
+        centerTitle: true,
         backgroundColor: Colors.blue,
-        title: Text(
-          "Resume workspace",
+        title: const Text(
+          "Resume Builder",
           style: TextStyle(color: Colors.white),
         ),
-        centerTitle: true,
       ),
-      backgroundColor: Colors.grey.shade300,
       body: Column(
         children: [
           Expanded(
+            flex: 1,
             child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        "contact",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        "photo",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              height: 60,
+              alignment: Alignment.topCenter,
               color: Colors.blue,
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Expanded(
-            flex: 15,
-            child: Container(
-              child: Column(
+              child: Row(
                 children: [
-                  Container(
-                    height: 500,
-                    width: 380,
-                    color: Colors.black12,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                  Expanded(
+                    flex: 1,
+                    child: Column(
                       children: [
-                        Icon(
-                          Icons.person,
-                          size: 20,
+                        Expanded(
+                          flex: 13,
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: const Text(
+                              "contact",
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
                         ),
-                        TextField(
-                          controller: namecontroller,
-                          decoration: InputDecoration(
-                            hintText: "name",
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            color: Colors.yellow,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Expanded(
+                          flex: 13,
+                          child: GestureDetector(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: const Text(
+                                "Photo",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            color: Colors.yellow,
                           ),
                         ),
                       ],
@@ -95,8 +95,162 @@ class _contactinfoState extends State<contactinfo> {
               ),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            flex: 13,
+            child: Container(
+              alignment: Alignment.topCenter,
+              color: Colors.white,
+              child: Container(
+                color: Colors.grey.shade200,
+                padding: const EdgeInsets.all(15),
+                height: h * 0.53,
+                width: 350,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        const Expanded(
+                          child: Icon(Icons.person),
+                        ),
+                        Expanded(
+                            flex: 4,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                hintText: 'Name',
+                                hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ))
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        const Expanded(
+                          child: Icon(Icons.mail),
+                        ),
+                        Expanded(
+                          flex: 4,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: 'Email',
+                              hintStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        const Expanded(
+                          child: Icon(
+                            Icons.phone_android,
+                          ),
+                        ),
+                        Expanded(
+                          flex: 4,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: "Phine number",
+                              hintStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        const Expanded(
+                          child: Icon(
+                            Icons.location_on,
+                          ),
+                        ),
+                        Expanded(
+                          flex: 4,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: "No. building name ",
+                              hintStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(),
+                        ),
+                        Expanded(
+                          flex: 4,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: "ADDRESS LINE 1 ",
+                              hintStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(),
+                        ),
+                        Expanded(
+                          flex: 4,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: "ADDRESS LINE 2 ",
+                              hintStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+/*
+import 'package:flutter/material.dart';
+import 'package:resume_app/components/global.dart';
+
+class Contact_page extends StatefulWidget {
+  const Contact_page({super.key});
+
+  @override
+  State<Contact_page> createState() => _Contact_pageState();
+}
+
+class _Contact_pageState extends State<Contact_page> {
+  @override
+  Widget build(BuildContext context) {
+
+ */
