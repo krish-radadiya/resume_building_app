@@ -70,7 +70,7 @@ class _BuildOptionState extends State<Buildoption> {
               ),
               child: SingleChildScrollView(
                 child: Column(
-                  children: Global.alldetails.map((e) {
+                  children: Globals.alldetails.map((e) {
                     return Stack(
                       alignment: Alignment(-0.9, -1),
                       children: [
@@ -102,7 +102,12 @@ class _BuildOptionState extends State<Buildoption> {
                                   )
                                 ],
                               ),
-                              Icon(Icons.arrow_forward_ios),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pushNamed('contact_info');
+                                },
+                                child: Icon(Icons.arrow_forward_ios),
+                              ),
                             ],
                           ),
                         ),
