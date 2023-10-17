@@ -104,7 +104,7 @@ class _BuildOptionState extends State<Buildoption> {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.of(context).pushNamed('contact_info');
+                                  Navigator.of(context).pushNamed(e['names']);
                                 },
                                 child: Icon(Icons.arrow_forward_ios),
                               ),
