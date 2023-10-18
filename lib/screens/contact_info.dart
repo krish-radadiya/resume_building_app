@@ -185,13 +185,13 @@ class _ContectInfoState extends State<ContectInfo> {
                       child: Column(
                         children: [
                           SizedBox(
-                            height: 20,
+                            height: 30,
                           ),
                           Center(
                             child: Container(
                               padding: EdgeInsets.all(10),
-                              height: h * .45,
-                              width: w * .9,
+                              height: h * 0.50,
+                              width: w * 0.9,
                               color: Globals.textColor,
                               child: SingleChildScrollView(
                                 child: Column(
@@ -431,15 +431,15 @@ class _ContectInfoState extends State<ContectInfo> {
                         child: Container(
                           margin: EdgeInsets.all(20),
                           padding: EdgeInsets.all(10),
-                          height: h * .33,
-                          width: w * .9,
+                          height: h * 0.45,
+                          width: w * 0.9,
                           color: Globals.textColor,
                           alignment: Alignment.center,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CircleAvatar(
-                                radius: 70,
+                                radius: 100,
                                 foregroundImage: FileImage(
                                   File(
                                     "${image?.path}",
