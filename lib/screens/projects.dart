@@ -2,21 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../utils/global.dart';
 
-class PersonalDetails extends StatefulWidget {
-  const PersonalDetails({Key? key}) : super(key: key);
+class projects extends StatefulWidget {
+  const projects({super.key});
 
   @override
-  State<PersonalDetails> createState() => _PersonalDetailsState();
+  State<projects> createState() => _projectsState();
 }
 
-class _PersonalDetailsState extends State<PersonalDetails> {
-  String? marrid;
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  @override
-  void initState() {
-    super.initState();
-  }
+GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+class _projectsState extends State<projects> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -71,7 +66,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                   Container(
                     padding: const EdgeInsets.all(15),
                     margin: const EdgeInsets.only(top: 30),
-                    height: h * .65,
+                    height: h * .80,
                     width: w * .9,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -119,53 +114,6 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
-                          Text(
-                            "Marital Status",
-                            style: TextStyle(
-                              fontSize: 23,
-                              color: Globals.bgColor,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  activeColor: Globals.bgColor,
-                                  value: "Single",
-                                  groupValue: marrid,
-                                  onChanged: (val) {
-                                    setState(() {
-                                      marrid = val;
-                                    });
-                                  }),
-                              const Text(
-                                "Singal",
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.grey,
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  activeColor: Globals.bgColor,
-                                  value: "Married",
-                                  groupValue: marrid,
-                                  onChanged: (val) {
-                                    setState(() {
-                                      marrid = val;
-                                    });
-                                  }),
-                              const Text(
-                                "Married",
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.grey,
-                                ),
-                              )
-                            ],
                           ),
                           Text(
                             "Languages Known",
@@ -230,6 +178,80 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                                 ),
                               )
                             ],
+                          ),
+                          Text(
+                            "Nationality",
+                            style: TextStyle(
+                              fontSize: 23,
+                              color: Globals.bgColor,
+                            ),
+                          ),
+                          TextFormField(
+                            onFieldSubmitted: (val) {
+                              setState(() {
+                                Globals.nationalityc.text = val;
+                              });
+                            },
+                            validator: (val) {
+                              if (val!.isEmpty) {
+                                return "Plese Enter Passing Year";
+                              }
+                            },
+                            controller: Globals.nationalityc,
+                            onChanged: (val) {
+                              setState(() {
+                                Globals.nationality = val;
+                              });
+                            },
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: "Indian",
+                              hintStyle: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 17,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Nationality",
+                            style: TextStyle(
+                              fontSize: 23,
+                              color: Globals.bgColor,
+                            ),
+                          ),
+                          TextFormField(
+                            onFieldSubmitted: (val) {
+                              setState(() {
+                                Globals.nationalityc.text = val;
+                              });
+                            },
+                            validator: (val) {
+                              if (val!.isEmpty) {
+                                return "Plese Enter Passing Year";
+                              }
+                            },
+                            controller: Globals.nationalityc,
+                            onChanged: (val) {
+                              setState(() {
+                                Globals.nationality = val;
+                              });
+                            },
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: "Indian",
+                              hintStyle: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 17,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
                           ),
                           Text(
                             "Nationality",

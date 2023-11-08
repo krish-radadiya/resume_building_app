@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:resume_building_app/utils/global.dart';
 
-class reference_screen extends StatefulWidget {
-  const reference_screen({super.key});
+class education extends StatefulWidget {
+  const education({super.key});
 
   @override
-  State<reference_screen> createState() => _reference_screenState();
+  State<education> createState() => _educationState();
 }
 
-class _reference_screenState extends State<reference_screen> {
+class _educationState extends State<education> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 130,
         backgroundColor: Globals.bgColor,
+        toolbarHeight: 120,
         title: Text(
-          "References",
+          "Education",
           style: TextStyle(
-            color: Globals.textColor,
             fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
         centerTitle: true,
@@ -30,11 +31,11 @@ class _reference_screenState extends State<reference_screen> {
         color: Colors.grey.withOpacity(0.4),
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Center(
                 child: Container(
-                  margin: EdgeInsets.all(20),
-                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10),
                   height: h * 0.60,
                   width: w * 0.9,
                   color: Globals.textColor,
@@ -48,7 +49,6 @@ class _reference_screenState extends State<reference_screen> {
                         ),
                         Container(
                           padding: EdgeInsets.all(15),
-                          margin: EdgeInsets.only(top: 30),
                           height: h * .65,
                           width: w * .9,
                           decoration: BoxDecoration(
@@ -61,7 +61,7 @@ class _reference_screenState extends State<reference_screen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "Reference Name",
+                                  "Cource/name",
                                   style: TextStyle(
                                     fontSize: 23,
                                     color: Globals.bgColor,
@@ -85,12 +85,12 @@ class _reference_screenState extends State<reference_screen> {
                                     });
                                   },
                                   keyboardType: TextInputType.emailAddress,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide(
                                       color: Colors.grey,
                                     )),
-                                    hintText: "suresh shah",
+                                    hintText: "BCA",
                                     hintStyle: TextStyle(
                                       color: Colors.grey,
                                       fontSize: 17,
@@ -99,7 +99,7 @@ class _reference_screenState extends State<reference_screen> {
                                   ),
                                 ),
                                 Text(
-                                  "Designation",
+                                  "school/collage/institute",
                                   style: TextStyle(
                                     fontSize: 23,
                                     color: Globals.bgColor,
@@ -123,12 +123,12 @@ class _reference_screenState extends State<reference_screen> {
                                     });
                                   },
                                   keyboardType: TextInputType.emailAddress,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide(
                                       color: Colors.grey,
                                     )),
-                                    hintText: "Marketing /manager, iD-342323",
+                                    hintText: "Swarnim universety",
                                     hintStyle: TextStyle(
                                       color: Colors.grey,
                                       fontSize: 17,
@@ -137,7 +137,7 @@ class _reference_screenState extends State<reference_screen> {
                                   ),
                                 ),
                                 Text(
-                                  "Organization/institute",
+                                  "school/collage/institute",
                                   style: TextStyle(
                                     fontSize: 23,
                                     color: Globals.bgColor,
@@ -161,12 +161,51 @@ class _reference_screenState extends State<reference_screen> {
                                     });
                                   },
                                   keyboardType: TextInputType.emailAddress,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide(
                                       color: Colors.grey,
                                     )),
-                                    hintText: "green Energy pvt.Ltd",
+                                    hintText: "Swarnim universety",
+                                    hintStyle: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  "year of pass",
+                                  style: TextStyle(
+                                    fontSize: 23,
+                                    color: Globals.bgColor,
+                                  ),
+                                ),
+                                TextFormField(
+                                  onFieldSubmitted: (val) {
+                                    setState(() {
+                                      Globals.dobc.text = val;
+                                    });
+                                  },
+                                  validator: (val) {
+                                    if (val!.isEmpty) {
+                                      return "DD/MM/YYYY";
+                                    }
+                                  },
+                                  controller: Globals.dobc,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      Globals.dob = val;
+                                    });
+                                  },
+                                  keyboardType: TextInputType.emailAddress,
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                    hintText: "year of passing",
                                     hintStyle: TextStyle(
                                       color: Colors.grey,
                                       fontSize: 17,

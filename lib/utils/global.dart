@@ -8,6 +8,7 @@ class Globals {
     fontWeight: FontWeight.w500,
   );
 
+
   static bool gujarati = false;
   static bool hindi = false;
   static bool english = false;
@@ -81,7 +82,6 @@ class Globals {
   static TextEditingController compnyc = TextEditingController();
   static TextEditingController roles1c = TextEditingController();
   static TextEditingController schoolec = TextEditingController();
-
   static TextEditingController rolesc = TextEditingController();
   static TextEditingController technologic = TextEditingController();
   static TextEditingController p_descriptionc = TextEditingController();

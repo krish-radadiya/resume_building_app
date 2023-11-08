@@ -5,7 +5,6 @@ import 'package:image_picker/image_picker.dart';
 
 import '../utils/global.dart';
 
-
 class ContectInfo extends StatefulWidget {
   const ContectInfo({super.key});
 
@@ -26,12 +25,13 @@ class _ContectInfoState extends State<ContectInfo> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xffededed),
+      backgroundColor: const Color(0xffededed),
       appBar: AppBar(
         actions: [
           IconButton(
             onPressed: () {
               formKey.currentState!.reset();
+
               Globals.namec.clear();
               Globals.emailc.clear();
               Globals.numberc.clear();
@@ -49,13 +49,13 @@ class _ContectInfoState extends State<ContectInfo> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
+                  const SnackBar(
                     content: Text("Saved Successfully..."),
                   ),
                 );
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
+                  const SnackBar(
                     content: Text("Plese Enter Full Detail..."),
                   ),
                 );
@@ -184,12 +184,12 @@ class _ContectInfoState extends State<ContectInfo> {
                       key: formKey,
                       child: Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Center(
                             child: Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               height: h * 0.50,
                               width: w * 0.9,
                               color: Globals.textColor,
@@ -198,7 +198,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                   children: [
                                     Row(
                                       children: [
-                                        Expanded(
+                                        const Expanded(
                                           child: Icon(
                                             Icons.person,
                                             size: 35,
@@ -223,7 +223,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                                 Globals.name = val;
                                               });
                                             },
-                                            decoration: InputDecoration(
+                                            decoration: const InputDecoration(
                                               hintText: "Name",
                                               hintStyle: TextStyle(
                                                 color: Colors.grey,
@@ -235,7 +235,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                     ),
                                     Row(
                                       children: [
-                                        Expanded(
+                                        const Expanded(
                                           child: Icon(
                                             Icons.email,
                                             size: 35,
@@ -261,8 +261,8 @@ class _ContectInfoState extends State<ContectInfo> {
                                               });
                                             },
                                             keyboardType:
-                                            TextInputType.emailAddress,
-                                            decoration: InputDecoration(
+                                                TextInputType.emailAddress,
+                                            decoration: const InputDecoration(
                                               hintText: "Email",
                                               hintStyle: TextStyle(
                                                 color: Colors.grey,
@@ -274,7 +274,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                     ),
                                     Row(
                                       children: [
-                                        Expanded(
+                                        const Expanded(
                                           child: Icon(
                                             Icons.phone_android,
                                             size: 35,
@@ -300,7 +300,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                               });
                                             },
                                             keyboardType: TextInputType.number,
-                                            decoration: InputDecoration(
+                                            decoration: const InputDecoration(
                                               hintText: "Phone",
                                               hintStyle: TextStyle(
                                                 color: Colors.grey,
@@ -312,7 +312,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                     ),
                                     Row(
                                       children: [
-                                        Expanded(
+                                        const Expanded(
                                           child: Icon(
                                             Icons.location_on,
                                             size: 35,
@@ -337,9 +337,9 @@ class _ContectInfoState extends State<ContectInfo> {
                                                 Globals.address1 = val;
                                               });
                                             },
-                                            decoration: InputDecoration(
+                                            decoration: const InputDecoration(
                                               hintText:
-                                              "Address(Street,building)",
+                                                  "Address(Street,building)",
                                               hintStyle: TextStyle(
                                                 color: Colors.grey,
                                               ),
@@ -372,7 +372,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                                 Globals.address2 = val;
                                               });
                                             },
-                                            decoration: InputDecoration(
+                                            decoration: const InputDecoration(
                                               hintText: "Address2",
                                               hintStyle: TextStyle(
                                                 color: Colors.grey,
@@ -406,7 +406,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                                 Globals.address3 = val;
                                               });
                                             },
-                                            decoration: InputDecoration(
+                                            decoration: const InputDecoration(
                                               hintText: "Address3",
                                               hintStyle: TextStyle(
                                                 color: Colors.grey,
@@ -429,8 +429,8 @@ class _ContectInfoState extends State<ContectInfo> {
                     children: [
                       Center(
                         child: Container(
-                          margin: EdgeInsets.all(20),
-                          padding: EdgeInsets.all(10),
+                          margin: const EdgeInsets.all(20),
+                          padding: const EdgeInsets.all(10),
                           height: h * 0.45,
                           width: w * 0.9,
                           color: Globals.textColor,
@@ -458,7 +458,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                         Globals.imagePath = image!.path;
                                       });
                                     },
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.camera_alt,
                                       size: 35,
                                     ),
@@ -472,7 +472,7 @@ class _ContectInfoState extends State<ContectInfo> {
                                         Globals.imagePath = image!.path;
                                       });
                                     },
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.panorama,
                                       size: 35,
                                     ),

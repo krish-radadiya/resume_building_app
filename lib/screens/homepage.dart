@@ -54,8 +54,11 @@ class _homepageState extends State<homepage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              height: 60,
-              child: Image.asset("assets/Icon/open-cardboard-box.png"),
+              margin: EdgeInsets.only(top: 70),
+              height: 100,
+              child: Image.asset(
+                "assets/Icon/open-cardboard-box.png",
+              ),
             ),
             SizedBox(
               height: 15,
@@ -63,7 +66,7 @@ class _homepageState extends State<homepage> {
             Text(
               "new resumes + create new resumes",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
               ),
             ),
           ],
